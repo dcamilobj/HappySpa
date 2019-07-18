@@ -6,15 +6,27 @@ settings.$inject = ['$stateProvider'];
 
 function settings($stateProvider){
 
+    var homeState = {
+        abstract: true,
+        name: 'home',
+        templateUrl: 'views/home.html'
+    }
+
     var mainState = {
-        name: 'main',
+        name: 'home.main',
         url: '/',
-        templateUrl: 'views/main.html'
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl as vm'
     }
     
     var aboutState = {
-        name: 'about',
+        name: 'home.about',
         url: '/about',
         templateUrl: 'views/about.html'
     }
+
+    
+    $stateProvider.state(homeState);
+    $stateProvider.state(mainState);
+    $stateProvider.state(aboutState);
 }
