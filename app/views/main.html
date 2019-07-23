@@ -1,22 +1,19 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
+<div  id="img-bac" class="jumbotron">
+  <h1>Happy Spa!</h1>
   <p class="lead">
-    <img class="background" src="" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
+    Always a pleasure receive you!
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
 
-<div class="row marketing">
-  <h4>My name is:</h4>
-    
-  <div >{{vm.myName}}</div>
-
-  <h4>Servicios ofrecidos</h4>
-  <div style="background: color url('https://pur.vamtam.com/wp-content/uploads/2017/12/pic6.jpg')" ng-repeat="item in vm.serviceList">
-    {{item.name}}
+<div id="services" class="container">
+  <div ng-style="{ 'background': 'url({{item.image}})' }" class="service-item" ng-repeat="item in vm.serviceList">
+    <div class="content-service">
+      <h4>{{ item.name }}</h4>
+      <p>{{ item.description }}</p>
+      <p>COP {{ item.cost }}</p>
+      <a ui-sref="home.detail">Ver detalles</a>
+    </div>
   </div>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+  <p>* Reserva cualquiera de nuestros servicios con facilidad</p>
 </div>

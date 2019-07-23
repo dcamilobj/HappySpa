@@ -2,9 +2,9 @@
 
 angular.module('happySpaApp').config(settings);
 
-settings.$inject = ['$stateProvider'];
+settings.$inject = ['$stateProvider','$urlRouterProvider'];
 
-function settings($stateProvider){
+function settings($stateProvider,$urlRouterProvider){
 
     var homeState = {
         abstract: true,
@@ -25,8 +25,17 @@ function settings($stateProvider){
         templateUrl: 'views/about.html'
     }
 
+    var detailState = {
+        name: 'home.detail',
+        url: '/detail',
+        templateUrl: 'views/detailService.html'
+    }
+
     
     $stateProvider.state(homeState);
     $stateProvider.state(mainState);
     $stateProvider.state(aboutState);
+    $stateProvider.state(detailState);
+
+    $urlRouterProvider.when('','/');
 }

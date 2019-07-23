@@ -81,7 +81,38 @@ body {
     border-bottom: 0;
   }
 
-  .img {
+  #img-bac {
     background-image: url("https://pur.vamtam.com/wp-content/uploads/2017/11/parallax4.jpg");
    }
+
+   #img-service {
+    background-image: url("https://pur.vamtam.com/wp-content/uploads/2017/12/pic7.jpg");
+    height: 200px;
+    width: 30%
+   }
+
+   #services{
+    margin-bottom: 20px;
+  }
+  
+  #services h2 {
+    font-weight: 200;
+  }
+  
+  #services .service-item{
+    padding: 0px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    background-size: cover !important;
+  }
+  #services .service-item .content-service{
+    padding: 15px;
+    color: #828178;
+  }
+  
+  #services .service-item .content-service h4{
+    font-size: 28px;
+    color: #828178;
+    font-weight: 600;
+  }
 }
