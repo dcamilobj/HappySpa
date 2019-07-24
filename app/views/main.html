@@ -11,7 +11,7 @@
       <h4>{{ item.name }}</h4>
       <p>{{ item.description }}</p>
       <p>COP {{ item.cost }}</p>
-      <a ui-sref="home.detail">Ver detalles</a>
+      <a ui-sref="home.detail({id:item.id})">Ver detalles</a>
     </div>
   </div>
 
