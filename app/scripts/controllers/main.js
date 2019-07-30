@@ -27,7 +27,6 @@ mainCtrl.$inject = ['spaServices', 'spaServicesHttp'];
     }
 
     function loadSpaServicesHttp(){
-      console.log('loadSpaServicesHttp started');
       spaServicesHttp.getAll()
       .then(function(result){
         vm.serviceList = result.data;
@@ -35,6 +34,5 @@ mainCtrl.$inject = ['spaServices', 'spaServicesHttp'];
       .catch(function(error){
         console.log(error);
       });
-      console.log('loadSpaServicesHttp ended');
     }
   }

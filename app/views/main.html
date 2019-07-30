@@ -8,9 +8,9 @@
 <div id="services" class="container">
   <div ng-style="{ 'background': 'url({{item.image}})' }" class="service-item" ng-repeat="item in vm.serviceList">
     <div class="content-service">
-      <h4>{{ item.name }}</h4>
+      <h4>{{ item.name | uppercase}}</h4>
       <p>{{ item.description }}</p>
-      <p>COP {{ item.cost }}</p>
+      <p>COP {{ item.cost | currencyFormat }}</p>
       <a ui-sref="home.detail({id:item.id})">Ver detalles</a>
     </div>
   </div>

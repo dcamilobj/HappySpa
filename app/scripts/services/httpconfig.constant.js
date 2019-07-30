@@ -12,5 +12,8 @@ angular.module('happySpaApp')
     url: 'http://localhost:3000/',
     services: {
       all: 'services/'
+    },
+    book: {
+      save: 'book/'
     }
   });
