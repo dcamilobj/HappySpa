@@ -115,4 +115,8 @@ body {
     color: #828178;
     font-weight: 600;
   }
+
+  .swal2-container {
+    zoom: 1.5;
+  }
 }
