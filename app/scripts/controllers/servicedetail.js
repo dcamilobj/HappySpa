@@ -27,7 +27,7 @@ serviceDetailCtrl.inject = ['$state', 'spaServicesHttp'];
     spaServicesHttp.getById(id)
     .then(function(result){
       vm.service = result.data;
-      console.log(result.data);
+      console.log("Service detail: " + result.data);
     })
     .catch(function(error){
       console.log(error);

@@ -28,12 +28,17 @@ bookCtrl.$inject = [ 'spaSaveBook', 'spaServicesHttp'];
      .then(function(result){
       Swal.fire({
         type: 'success',
-        title: 'Good Job!',
-        text: 'Has hecho la reserva éxitosamente!',
+        title: 'Bien hecho!',
+        text: 'La reserva fue almacenada éxitosamente!',
       })
        console.log(result.data);
      })
      .catch(function(error){
+      Swal.fire({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Algo salió mal!'
+      })
        console.log(error);
      });
    }
