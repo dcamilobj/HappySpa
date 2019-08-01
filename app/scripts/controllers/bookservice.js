@@ -9,14 +9,16 @@
  */
 angular.module('happySpaApp').controller('BookServiceCtrl', bookServiceCtrl);
 
-serviceDetailCtrl.inject = ['$state', 'spaSaveBook'];
-function bookServiceCtrl($state,spaSaveBook) {
+serviceDetailCtrl.inject = ['$state', 'spaSaveBook','spaServicesHttp'];
+function bookServiceCtrl($state,spaSaveBook,spaServicesHttp) {
   var vm = this;
   vm.form = {};
   vm.submitBook = submitBook;
+  vm.loadSpaServiceInfo = loadSpaServiceInfo;
   vm.$onInit = onInit;
 
   function onInit(){
+    loadSpaServiceInfo();
   }
 
   function submitBook(){
@@ -26,7 +28,7 @@ function bookServiceCtrl($state,spaSaveBook) {
     .then(function(result){
      Swal.fire({
        type: 'success',
-       title: 'Bien hecho!',
+       title: 'Bien hecho ' + result.data.name + '!' ,
        text: 'La reserva fue almacenada éxitosamente!',
      })
       console.log(result.data);
@@ -39,5 +41,17 @@ function bookServiceCtrl($state,spaSaveBook) {
      })
       console.log(error);
     });
+  }
+
+  function loadSpaServiceInfo(){
+    let id = $state.params.id;
+    spaServicesHttp.getById(id)
+    .then(function(result){
+      vm.serviceInfo = result.data;
+    })
+    .catch(function(error){
+      console.log(error);
+    });
+    console.log('loadSpaServicesHttp ended');
   }
  };

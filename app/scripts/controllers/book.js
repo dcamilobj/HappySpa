@@ -28,7 +28,7 @@ bookCtrl.$inject = [ 'spaSaveBook', 'spaServicesHttp'];
      .then(function(result){
       Swal.fire({
         type: 'success',
-        title: 'Bien hecho!',
+        title: 'Bien hecho ' + result.data.name + '!',
         text: 'La reserva fue almacenada éxitosamente!',
       })
        console.log(result.data);
